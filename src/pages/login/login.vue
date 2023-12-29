@@ -1,5 +1,7 @@
 <template>
-  <div class="login">login</div>
+  <view class="login">
+    <view> 1231 2342 234 </view>
+  </view>
 </template>
 
 <script lang="ts" setup></script>
