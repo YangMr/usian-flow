@@ -1,5 +1,6 @@
 import { useUserStore } from '@/stores/user'
-const baseURL = 'https://slwl-api.itheima.net'
+// const baseURL = 'https://slwl-api.itheima.net'
+const baseURL = '/api'
 
 // 请求拦截器
 const httpInterceptor = {
@@ -21,7 +22,6 @@ const httpInterceptor = {
     // 4. 通过请求头发送token
     const store = useUserStore()
     if (store.token) {
-      console.log('aaaa')
       config.header.Authorization = store.token
     }
 
@@ -29,6 +29,7 @@ const httpInterceptor = {
   },
 }
 
+// 添加拦截器 http 文件上传添加拦截器
 uni.addInterceptor('request', httpInterceptor)
 uni.addInterceptor('uploadFile', httpInterceptor)
 
