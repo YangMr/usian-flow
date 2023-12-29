@@ -10,14 +10,15 @@
     "types": [
       "@dcloudio/types",
       "miniprogram-api-typings",
-      "@uni-helper/uni-app-types"
-    ],
-    // vue 编译器类型，校验标签类型
-    "vueCompilerOptions": {
-      // 原配置 `experimentalRuntimeMode` 现调整为 `nativeTags`
-      "nativeTags": ["block", "component", "template", "slot"]
-      //  "experimentalRuntimeMode": "runtime-uni-app"
-    }
+      "@uni-helper/uni-app-types",
+      "@uni-helper/uni-ui-types"
+    ]
+  },
+  // vue 编译器类型，校验标签类型
+  "vueCompilerOptions": {
+    // 原配置 `experimentalRuntimeMode` 现调整为 `nativeTags`
+    "nativeTags": ["block", "component", "template", "slot"]
+    // "experimentalRuntimeMode": "runtime-uni-app"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
