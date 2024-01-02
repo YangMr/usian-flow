@@ -18,9 +18,21 @@
       }
     },
     {
-      "path": "pages/index/index",
+      "path": "pages/task/index",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "task"
+      }
+    },
+    {
+      "path": "pages/message/index",
+      "style": {
+        "navigationBarTitleText": "message"
+      }
+    },
+    {
+      "path": "pages/my/index",
+      "style": {
+        "navigationBarTitleText": "my"
       }
     }
   ],
@@ -29,5 +41,30 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-  }
+  },
+  "tabBar": {
+		"borderStyle": "white",
+		"backgroundColor": "#fff",
+		"color": "#818181",
+		"selectedColor": "#EF4F3F",
+		"list": [{
+				"text": "任务",
+				"pagePath": "pages/task/index",
+				"iconPath": "static/tabbar/task_normal.png",
+				"selectedIconPath": "static/tabbar/task_selected.png"
+			},
+			{
+				"text": "消息",
+				"pagePath": "pages/message/index",
+				"iconPath": "static/tabbar/message_normal.png",
+				"selectedIconPath": "static/tabbar/message_selected.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/my/index",
+				"iconPath": "static/tabbar/my_normal.png",
+				"selectedIconPath": "static/tabbar/my_selected.png"
+			}
+		]
+	}
 }

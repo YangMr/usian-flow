@@ -57,11 +57,15 @@ const submitLogin = async () => {
     // });
     if (routeType.value === 'navigateTo') {
       uni.navigateTo({
-        url: redirectUrl.value || '/pages/index/index',
+        url: redirectUrl.value,
       })
     } else if (routeType.value === 'switchTab') {
       uni.switchTab({
-        url: redirectUrl.value || '/pages/index/index',
+        url: redirectUrl.value,
+      })
+    } else {
+      uni.navigateTo({
+        url: '/pages/my/index',
       })
     }
   } catch (e) {
