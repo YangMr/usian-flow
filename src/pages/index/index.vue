@@ -5,18 +5,16 @@
 </template>
 
 <script setup lang="ts">
-import { login } from '@/api/login'
-import { useUserStore } from '@/stores/user'
-const store = useUserStore()
+import { task } from '@/api/task'
 
 const send = async () => {
-  const res = await login({
-    account: 'xbsj001',
-    password: '123456',
+  const res = await task({
+    page: 1,
+    pageSize: 5,
+    status: 1,
   })
 
   console.log('res=>', res.data)
-  store.token = res.data
 }
 </script>
 

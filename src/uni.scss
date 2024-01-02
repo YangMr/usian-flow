@@ -74,3 +74,30 @@ $uni-color-subtitle: #555; // 二级标题颜色
 $uni-font-size-subtitle: 18px;
 $uni-color-paragraph: #3f536e; // 文章段落颜色
 $uni-font-size-paragraph: 15px;
+
+
+/* 主色 */
+$uni-primary: #ef4f3f;
+
+// 辅助色
+// 除了主色外的场景色，需要在不同的场景中使用（例如危险色表示危险的操作）。
+$uni-success: #27ba9b;
+$uni-warning: #e19a30;
+$uni-error: #ff4c4c;
+
+// 中性色
+// 中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。
+$uni-main-color: #2a2929; // 主要文字
+$uni-secondary-color: #818181; // 次要文字
+
+// 边框颜色
+$uni-border-1: #f4f4f4;
+$uni-border-3: #f4f4f4;
+
+// 背景色
+$uni-bg-color: #f4f4f4;
+
+// 字号大小
+$uni-font-size-big: 36rpx;
+$uni-font-size-base: 32rpx;
+$uni-font-size-small: 28rpx;
