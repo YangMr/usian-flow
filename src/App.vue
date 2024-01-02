@@ -10,4 +10,16 @@ onHide(() => {
   console.log('App Hide')
 })
 </script>
-<style></style>
+<style lang="scss">
+@import './common/iconfont/fonts.scss';
+
+.page-container {
+  height: 100vh;
+  /* #ifdef H5 */
+  height: calc(100vh - 44px);
+  /* #endif  */
+  overflow-y: auto;
+  box-sizing: border-box;
+  background-color: $uni-bg-color;
+}
+</style>

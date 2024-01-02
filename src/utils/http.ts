@@ -1,10 +1,5 @@
 import { useUserStore } from '@/stores/user'
-import type { dataType } from './types/responseType'
 // const baseURL = 'https://slwl-api.itheima.net'
-
-// 定义 tabBar 的路径
-const tabBarPagePaths = ['pages/task/index', 'pages/message/index', 'pages/my/index']
-
 const baseURL = '/api'
 
 // 请求拦截器
@@ -38,13 +33,20 @@ const httpInterceptor = {
 uni.addInterceptor('request', httpInterceptor)
 uni.addInterceptor('uploadFile', httpInterceptor)
 
+type dataType<T> = {
+  code: number
+  msg: string
+  data: T
+}
+
+// http状态吗  200
+// 业务码 code
+
 export function http<T>(options: UniApp.RequestOptions) {
   return new Promise<dataType<T>>((resolve, reject) => {
     uni.request({
       ...options,
       success: (response) => {
-        console.log('pages', getCurrentPages())
-
         if (response.statusCode >= 200 && response.statusCode <= 300) {
           resolve(response.data as dataType<T>)
         } else if (response.statusCode === 401) {
@@ -52,21 +54,8 @@ export function http<T>(options: UniApp.RequestOptions) {
           const store = useUserStore()
           store.token = ''
 
-          // 获取页面栈
-          const pageStack = getCurrentPages()
-
-          // 当前token过期的⻚⾯地址
-          const redirectURL = pageStack[pageStack.length - 1].route
-
-          // 判断当前页面是否是tabbar路由，如果是，跳转方式为switchTab ， 否则是navigateTo
-          const routeType = tabBarPagePaths.includes(redirectURL as string)
-            ? 'switchTab'
-            : 'navigateTo'
-
           // 跳转到登录也
-          uni.navigateTo({
-            url: `/pages/login/login?redirectURL=/${redirectURL}&routeType=${routeType}`,
-          })
+          uni.navigateTo({ url: '/pages/login/login' })
 
           // 将错误返回出去
           reject(response)

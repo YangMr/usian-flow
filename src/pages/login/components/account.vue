@@ -64,7 +64,7 @@ const submitLogin = async () => {
         url: redirectUrl.value,
       })
     } else {
-      uni.navigateTo({
+      uni.switchTab({
         url: '/pages/my/index',
       })
     }
