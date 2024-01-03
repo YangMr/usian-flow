@@ -1,5 +1,22 @@
 <template>
-  <view class="page-container">truck</view>
+  <view class="page-container">
+    <swiper indicator-dots autoplay circular>
+      <swiper-item v-for="(item, index) in truckInfo?.pictureList" :key="index">
+        <image :src="item.url" mode="scaleToFill" />
+      </swiper-item>
+    </swiper>
+
+    <uni-list :border="false">
+      <uni-list-item :right-text="truckInfo?.id" title="车辆编号"></uni-list-item>
+      <uni-list-item :right-text="truckInfo?.licensePlate" title="车辆号牌"></uni-list-item>
+      <uni-list-item :right-text="truckInfo?.truckType" title="车型"></uni-list-item>
+      <uni-list-item :right-text="truckInfo?.currentOrganName" title="所属机构"></uni-list-item>
+      <uni-list-item
+        :right-text="`${parseInt(truckInfo?.allowableLoad as string)}吨`"
+        title="载重"
+      ></uni-list-item>
+    </uni-list>
+  </view>
 </template>
 
 <script lang="ts" setup>

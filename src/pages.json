@@ -27,7 +27,8 @@
     {
       "path": "pages/message/index",
       "style": {
-        "navigationBarTitleText": "message"
+        "navigationBarTitleText": "消息",
+        "navigationBarBackgroundColor": "#ffffff"
       }
     },
     {
