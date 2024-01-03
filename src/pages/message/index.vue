@@ -11,10 +11,10 @@
       >
     </view>
 
-    <view v-show="tabIndex === 0">
+    <view class="message-list" v-show="tabIndex === 0">
       <UAnnounce></UAnnounce>
     </view>
-    <view v-show="tabIndex === 1">
+    <view class="message-list" v-show="tabIndex === 1">
       <UNotify></UNotify>
     </view>
   </view>
@@ -71,7 +71,6 @@ const onTabChange = (index: number) => {
     color: $uni-main-color;
     font-weight: 500;
     position: relative;
-
     &::after {
       content: '';
       position: absolute;
@@ -84,5 +83,9 @@ const onTabChange = (index: number) => {
       background-image: linear-gradient(210deg, #f25c4d 25%, #e52d21 100%, #e52d21 100%);
     }
   }
+}
+
+.message-list {
+  flex: 1;
 }
 </style>

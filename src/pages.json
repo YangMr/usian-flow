@@ -29,6 +29,7 @@
       "style": {
         "navigationBarTitleText": "消息",
         "navigationBarBackgroundColor": "#ffffff"
+        // "enablePullDownRefresh": true
       }
     },
     {
