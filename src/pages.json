@@ -23,7 +23,7 @@
       "style": {
         "navigationBarTitleText": "task",
         "app-plus": {
-          "titleNView" : false
+          "titleNView": false
         }
       }
     },
@@ -102,6 +102,23 @@
           "style": {
             "navigationBarTitleText": "系统设置",
             "navigationBarBackgroundColor": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg_task",
+      "pages": [
+        {
+          "path": "detail/index",
+          "style": {
+            "navigationBarTitleText": "detail"
+          }
+        },
+        {
+          "path": "pickup/index",
+          "style": {
+            "navigationBarTitleText": "pickup"
           }
         }
       ]

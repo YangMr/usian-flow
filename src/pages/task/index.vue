@@ -1,16 +1,15 @@
 <template>
   <view class="page-container">
-    <view class="tab">
-      <view
+    <view class="task-tabbar">
+      <text
+        v-for="(tabMeta, index) in tabMetas"
+        :key="tabMeta.title"
         @click="onTabChange(index)"
-        class="tab-item"
-        v-for="(item, index) in tabMetas"
-        :key="index"
+        :class="{ active: tabIndex === index }"
+        class="tab"
       >
-        <view class="title" :class="{ active: tabIndex === index }">
-          {{ item.title }}
-        </view>
-      </view>
+        {{ tabMeta.title }}
+      </text>
     </view>
 
     <view class="task-list">
@@ -60,51 +59,52 @@ const onTabChange = (index: number) => {
   flex-direction: column;
   /* #ifdef H5 */
   height: calc(100vh - 50px);
-  /* #endif */
+  /* #endif  */
 }
+.task-tabbar {
+  height: 80rpx;
+  padding: calc(env(safe-area-inset-top) + 13px) 60rpx 0;
 
-.tab {
+  /* #ifdef MP-WEIXIN */
+  padding: calc(env(safe-area-inset-top) + 35px) 60rpx 0;
+  /* #endif */
+
+  /* #ifdef APP */
+  padding: calc(env(safe-area-inset-top) + 40px) 60rpx 0;
+  /* #endif */
+
   display: flex;
+  align-items: center;
+  font-size: $uni-font-size-big;
   background-color: #fff;
-  /**TODO 后面讲解**/
-  // padding: calc(env(safe-area-inset-top) + 13px) 60rpx 0;
-  font-size: 36rpx;
-  .tab-item {
-    height: 88rpx;
+  border-bottom: 1rpx solid #eee;
+  color: $uni-secondary-color;
+
+  .tab {
     margin-right: 80rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  }
 
-    .title {
-      color: #818181;
-      position: relative;
+  .active {
+    color: $uni-main-color;
+    font-weight: 500;
+    position: relative;
 
-      &.active {
-        color: #2a2929;
-        font-weight: 500;
-
-        &::after {
-          content: '';
-          display: block;
-          background: #d8d8d8;
-          background-image: linear-gradient(210deg, #f25c4d 25%, #e52d21 100%, #e52d21 100%);
-          border-radius: 20rpx;
-          border-radius: 4rpx;
-          width: 100%;
-          height: 8rpx;
-          position: absolute;
-          bottom: -25rpx;
-        }
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -18rpx;
+      width: 46rpx;
+      height: 8rpx;
+      border-radius: 8rpx;
+      transform: translate(-50%);
+      background-color: $uni-primary;
     }
   }
 }
 
 .task-list {
   flex: 1;
-  background-color: red;
-  // overflow: hidden;
+  overflow: hidden;
 }
 </style>

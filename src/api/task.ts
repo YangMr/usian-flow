@@ -1,5 +1,5 @@
 import { http } from '@/utils/http'
-import type { taskParamsType, taskResponseType } from './types/task-type'
+import type { responseTaskDetailType, taskParamsType, taskResponseType } from './types/task-type'
 
 /**
  * 任务列表接口
@@ -11,5 +11,16 @@ export const taskList = (taskParams: taskParamsType) => {
     url: '/driver/tasks/list',
     method: 'GET',
     data: taskParams,
+  })
+}
+
+/**
+ * 任务详情接口
+ * @param jobId
+ */
+export const taskDetail = (jobId: string) => {
+  return http<responseTaskDetailType>({
+    url: `/driver/tasks/details/${jobId}`,
+    method: 'GET',
   })
 }
