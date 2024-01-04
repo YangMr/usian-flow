@@ -53,7 +53,7 @@ const onTabChange = (index: number) => {
   display: flex;
   flex-direction: column;
   /* #ifdef H5 */
-  height: calc(100vh - 94px);
+  height: calc(100vh - 94rpx);
   /* #endif */
 }
 

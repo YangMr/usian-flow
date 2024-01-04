@@ -21,7 +21,10 @@
     {
       "path": "pages/task/index",
       "style": {
-        "navigationBarTitleText": "task"
+        "navigationBarTitleText": "task",
+        "app-plus": {
+          "titleNView" : false
+        }
       }
     },
     {
