@@ -54,3 +54,11 @@ export const deliver = (deliverParams: deliverParamsType) => {
     data: deliverParams,
   });
 };
+
+// export const reportException = () => {
+//   return http({
+//     url: '/driver/tasks/deliver',
+//     method: 'POST',
+//     data: deliverParams,
+//   });
+// }

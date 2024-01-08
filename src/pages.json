@@ -140,6 +140,13 @@
 					"path": "record/index",
 					"style": {
 						"navigationBarTitleText": "回车登记",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				},
+				{
+					"path": "except/index",
+					"style": {
+						"navigationBarTitleText": "异常上报",
             "navigationBarBackgroundColor": "#ffffff"
 					}
 				}
