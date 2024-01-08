@@ -104,9 +104,7 @@
             "urlCheck" : false
         },
         "usingComponents" : true,
-		"requiredPrivateInfos" : [
-			"chooseLocation"
-		]
+        "requiredPrivateInfos" : [ "chooseLocation" ]
     },
     "mp-alipay" : {
         "usingComponents" : true
@@ -125,7 +123,7 @@
         "sdkConfigs" : {
             "maps" : {
                 "qqmap" : {
-                    "key" : "ETNBZ-KLD6B-OIMUP-NAO4I-Y6HQS-CKFXI"
+                    "key" : "FFABZ-43ZHH-72BDF-WAD6P-FDZYK-UHBOQ"
                 }
             }
         }

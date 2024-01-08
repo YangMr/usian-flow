@@ -5,6 +5,7 @@ import type {
   taskResponseType,
   takeDeliveryParams,
   deliverParamsType,
+  reportExceptionParamsType,
 } from './types/task-type';
 
 /**
@@ -55,10 +56,14 @@ export const deliver = (deliverParams: deliverParamsType) => {
   });
 };
 
-// export const reportException = () => {
-//   return http({
-//     url: '/driver/tasks/deliver',
-//     method: 'POST',
-//     data: deliverParams,
-//   });
-// }
+/**
+ * 异常上报接口
+ * @param reportExceptionParams
+ */
+export const reportException = (reportExceptionParams: reportExceptionParamsType) => {
+  return http({
+    url: '/driver/tasks/reportException',
+    method: 'POST',
+    data: reportExceptionParams,
+  });
+};

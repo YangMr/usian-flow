@@ -89,8 +89,9 @@
 </template>
 
 <script lang="ts" setup>
-import { uni } from '@dcloudio/uni-h5';
 import { ref, computed, reactive } from 'vue';
+import { reportException } from '@/api/task';
+import { onLoad } from '@dcloudio/uni-app';
 // 选择的时间
 const timePicker = ref('');
 // 异常时间
@@ -157,8 +158,29 @@ const exceptionImagesList = computed(() => {
   });
 });
 
+// 运输任务id
+const id = ref<string>();
+onLoad((options) => {
+  id.value = options?.transportTaskId;
+});
 // 提交方法
-const onFormSubmit = () => {};
+const onFormSubmit = async () => {
+  try {
+    const res = await reportException({
+      transportTaskId: id.value as string,
+      exceptionTime: exceptionTime.value,
+      exceptionPlace: exceptionPlace.value,
+      exceptionType: exceptionType.value,
+      exceptionDescribe: exceptionDescribe.value,
+      exceptionImagesList: exceptionImagesList.value,
+    });
+    if (res.code !== 200) return uni.utils.toast('上报数据失败！');
+    // 跳转到任务列表页面
+    uni.reLaunch({ url: '/pages/task/index' });
+  } catch (error) {
+    console.log(error);
+  }
+};
 </script>
 
 <style scoped lang="scss">
