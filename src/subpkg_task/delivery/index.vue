@@ -2,10 +2,10 @@
   <view class="page-container">
     <view class="receipt-info">
       <uni-file-picker
-        v-model="receiptPictrues"
         file-extname="jpg,webp,gif,png"
         limit="3"
         title="请拍照上传回单凭证"
+        v-model="receiptPictrues"
       ></uni-file-picker>
       <uni-file-picker
         file-extname="jpg,webp,gif,png"
@@ -19,25 +19,23 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
-import { takeDelivery } from '@/api/task';
 import type { CargoPickUpPictureList, CargoPictureList } from '@/api/types/task-type';
 import { onLoad } from '@dcloudio/uni-app';
-
+import { ref, computed } from 'vue';
+import { deliver } from '@/api/task.ts';
 // 回单凭证
 const receiptPictrues = ref<CargoPickUpPictureList[]>([]);
 // 货品照片
 const goodsPictrues = ref<CargoPictureList[]>([]);
 
-// 提货凭证照片数组
-const cargoPickUpPictureList = computed(() => {
+// 交付图片列表
+const deliverPictureList = computed(() => {
   return receiptPictrues.value.map(({ url }) => {
     return { url };
   });
 });
-
-// 提货照片数组
-const cargoPictureList = computed(() => {
+// 交付凭证列表
+const certificatePictureList = computed(() => {
   return goodsPictrues.value.map(({ url }) => {
     return { url };
   });
@@ -50,27 +48,20 @@ onLoad((options) => {
   id.value = options?.id;
 });
 
-// 司机作业id
-
 // 提交方法
 const submit = async () => {
-  console.log('receiptPictrues', receiptPictrues.value);
-  console.log('goodsPictrues', goodsPictrues.value);
-  console.log('cargoPickUpPictureList', cargoPickUpPictureList.value);
-  console.log('cargoPictureList', cargoPictureList.value);
   try {
-    const res = await takeDelivery({
-      cargoPickUpPictureList: cargoPickUpPictureList.value,
-      cargoPictureList: cargoPictureList.value,
-      id: id.value as string,
+    const res = await deliver({
+      id: id.value,
+      deliverPictureList: deliverPictureList.value,
+      certificatePictureList: certificatePictureList.value,
     });
+    if (res.code !== 200) return uni.utils.toast('上传图片失败!');
 
-    if (res.code !== 200) return uni.utils.toast('提交数据失败！');
-
-    // 去到任务列表
-    uni.reLaunch({ url: '/subpkg_task/detail/index?jobId=' + id.value });
+    // 去到任务列表（查看在途任务）
+    uni.reLaunch({ url: '/pages/task/index' });
   } catch (error) {
-    console.log('error', error);
+    console.log(error);
   }
 };
 </script>

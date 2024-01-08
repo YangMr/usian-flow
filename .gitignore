@@ -19,3 +19,8 @@ dist
 *.njsproj
 *.sln
 *.sw?
+
+src/uni_modules
+uniCloud-aliyun
+
+.prettierrc

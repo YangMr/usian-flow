@@ -1,127 +1,149 @@
 {
-  // 组件自动导入
-  "easycom": {
-    "autoscan": true,
-    "custom": {
-      // uni-ui 规则如下配置
-      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
-      "^i-(.*)": "@/components/i-$1.vue",
-      "^u-(.*)": "@/components/u-$1.vue"
-    }
-  },
-  "pages": [
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/login/login",
-      "style": {
-        "navigationBarTitleText": "积云快递",
-        "navigationBarBackgroundColor": "#ffffff"
-      }
-    },
-    {
-      "path": "pages/task/index",
-      "style": {
-        "navigationBarTitleText": "task",
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/message/index",
-      "style": {
-        "navigationBarTitleText": "消息",
-        "navigationBarBackgroundColor": "#ffffff"
-        // "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/my/index",
-      "style": {
-        "navigationBarTitleText": "my",
-        // 设置编译到app端的代码
-        "app-plus": {
-          // 隐藏标题栏 app端和h5端生效
-          "titleNView": false
-        }
-      }
-    }
-  ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "borderStyle": "white",
-    "backgroundColor": "#fff",
-    "color": "#818181",
-    "selectedColor": "#EF4F3F",
-    "list": [
-      {
-        "text": "任务",
-        "pagePath": "pages/task/index",
-        "iconPath": "static/tabbar/task_normal.png",
-        "selectedIconPath": "static/tabbar/task_selected.png"
-      },
-      {
-        "text": "消息",
-        "pagePath": "pages/message/index",
-        "iconPath": "static/tabbar/message_normal.png",
-        "selectedIconPath": "static/tabbar/message_selected.png"
-      },
-      {
-        "text": "我的",
-        "pagePath": "pages/my/index",
-        "iconPath": "static/tabbar/my_normal.png",
-        "selectedIconPath": "static/tabbar/my_selected.png"
-      }
-    ]
-  },
-  "subPackages": [
-    {
-      "root": "subpkg_user",
-      "pages": [
-        {
-          "path": "truck/index",
-          "style": {
-            "navigationBarTitleText": "车辆信息",
+	// 组件自动导入
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uni-ui 规则如下配置
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+			"^i-(.*)": "@/components/i-$1.vue",
+			"^u-(.*)": "@/components/u-$1.vue"
+		}
+	},
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "积云快递",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/task/index",
+			"style": {
+				"navigationBarTitleText": "task",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"navigationBarBackgroundColor": "#ffffff"
+				// "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "my",
+				// 设置编译到app端的代码
+				"app-plus": {
+					// 隐藏标题栏 app端和h5端生效
+					"titleNView": false
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"backgroundColor": "#fff",
+		"color": "#818181",
+		"selectedColor": "#EF4F3F",
+		"list": [
+			{
+				"text": "任务",
+				"pagePath": "pages/task/index",
+				"iconPath": "static/tabbar/task_normal.png",
+				"selectedIconPath": "static/tabbar/task_selected.png"
+			},
+			{
+				"text": "消息",
+				"pagePath": "pages/message/index",
+				"iconPath": "static/tabbar/message_normal.png",
+				"selectedIconPath": "static/tabbar/message_selected.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/my/index",
+				"iconPath": "static/tabbar/my_normal.png",
+				"selectedIconPath": "static/tabbar/my_selected.png"
+			}
+		]
+	},
+	"subPackages": [
+		{
+			"root": "subpkg_user",
+			"pages": [
+				{
+					"path": "truck/index",
+					"style": {
+						"navigationBarTitleText": "车辆信息",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				},
+				{
+					"path": "task/index",
+					"style": {
+						"navigationBarTitleText": "任务数据",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				},
+				{
+					"path": "settings/index",
+					"style": {
+						"navigationBarTitleText": "系统设置",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				}
+			]
+		},
+		{
+			"root": "subpkg_task",
+			"pages": [
+				{
+					"path": "detail/index",
+					"style": {
+						"navigationBarTitleText": "任务详情"
+					}
+				},
+				{
+					"path": "pickup/index",
+					"style": {
+						"navigationBarTitleText": "提货",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				},
+				{
+					"path": "delay/index",
+					"style": {
+						"navigationBarTitleText": "延迟提货",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				},
+				{
+					"path": "delivery/index",
+					"style": {
+						"navigationBarTitleText": "交货信息",
+						"navigationBarBackgroundColor": "#ffffff"
+					}
+				},
+				{
+					"path": "record/index",
+					"style": {
+						"navigationBarTitleText": "回车登记",
             "navigationBarBackgroundColor": "#ffffff"
-          }
-        },
-        {
-          "path": "task/index",
-          "style": {
-            "navigationBarTitleText": "任务数据",
-            "navigationBarBackgroundColor": "#ffffff"
-          }
-        },
-        {
-          "path": "settings/index",
-          "style": {
-            "navigationBarTitleText": "系统设置",
-            "navigationBarBackgroundColor": "#ffffff"
-          }
-        }
-      ]
-    },
-    {
-      "root": "subpkg_task",
-      "pages": [
-        {
-          "path": "detail/index",
-          "style": {
-            "navigationBarTitleText": "detail"
-          }
-        },
-        {
-          "path": "pickup/index",
-          "style": {
-            "navigationBarTitleText": "pickup"
-          }
-        }
-      ]
-    }
-  ]
+					}
+				}
+			]
+		}
+	]
 }

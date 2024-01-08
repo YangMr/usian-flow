@@ -3,285 +3,315 @@ export type taskParamsType = {
   /**
    * 结束时间
    */
-  endTime?: string
+  endTime?: string;
   /**
    * 页码
    */
-  page: number
+  page: number;
   /**
    * 页面大小
    */
-  pageSize: number
+  pageSize: number;
   /**
    * 开始时间
    */
-  startTime?: string
+  startTime?: string;
   /**
    * 作业状态，1为待提货）、2为在途(在途和已交付)、3为改派、5为已作废、6为已完成（已回车登记）
    */
-  status: number
+  status: number;
   /**
    * 运输任务id
    */
-  transportTaskId?: string
-}
+  transportTaskId?: string;
+};
 // 任务列表接口返回数据所需要的类型
 export type taskResponseType = {
   /**
    * 总条目数
    */
-  counts: number
+  counts: number;
   /**
    * 数据列表
    */
-  items: TaskItemType[] | null
+  items: TaskItemType[] | null;
   /**
    * 页码
    */
-  page: number
+  page: number;
   /**
    * 总页数
    */
-  pages: number
+  pages: number;
   /**
    * 页尺寸
    */
-  pageSize: number
-}
+  pageSize: number;
+};
 
 export type TaskItemType = {
   /**
    * 实际到达时间
    */
-  actualArrivalTime: string
+  actualArrivalTime: string;
   /**
    * 实际发车时间
    */
-  actualDepartureTime: string
+  actualDepartureTime: string;
   /**
    * 创建时间
    */
-  created: string
+  created: string;
   /**
    * 司机id
    */
-  driverId: string
+  driverId: string;
   /**
    * 是否可提货
    */
-  enablePickUp: boolean
+  enablePickUp: boolean;
   /**
    * 目的机构地址
    */
-  endAddress: string
+  endAddress: string;
   /**
    * 目的机构id
    */
-  endAgencyId: number
+  endAgencyId: number;
   /**
    * 交付对接人
    */
-  finishHandover: string
+  finishHandover: string;
   /**
    * 司机作业单id
    */
-  id: string
+  id: string;
   /**
    * 计划到达时间
    */
-  planArrivalTime: string
+  planArrivalTime: string;
   /**
    * 计划发车时间
    */
-  planDepartureTime: string
+  planDepartureTime: string;
   /**
    * 起始机构地址
    */
-  startAddress: string
+  startAddress: string;
   /**
    * 起始机构id
    */
-  startAgencyId: number
+  startAgencyId: number;
   /**
    * 提货对接人
    */
-  startHandover: string
+  startHandover: string;
   /**
    * 作业状态，作业状态，1为待提货）、2为在途）、3为改派）、4为已交付）、5为已作废
    */
-  status: string
+  status: string;
   /**
    * 运输任务id
    */
-  transportTaskId: string
-}
+  transportTaskId: string;
+};
 
 export type responseTaskDetailType = {
   /**
    * 实际到达时间
    */
-  actualArrivalTime: string
+  actualArrivalTime: string;
   /**
    * 实际发车时间
    */
-  actualDepartureTime: string
+  actualDepartureTime: string;
   /**
    * 提货凭证
    */
-  cargoPickUpPictureList: CargoPickUpPictureList[]
+  cargoPickUpPictureList: CargoPickUpPictureList[];
   /**
    * 提货图片
    */
-  cargoPictureList: CargoPictureList[]
+  cargoPictureList: CargoPictureList[];
   /**
    * 回单凭证
    */
-  certificatePictureList: CertificatePictureList[]
+  certificatePictureList: CertificatePictureList[];
   /**
    * 回单图片
    */
-  deliverPictureList: DeliverPictureList[]
+  deliverPictureList: DeliverPictureList[];
   /**
    * 司机id
    */
-  driverId: string
+  driverId: string;
   /**
    * 司机姓名
    */
-  driverName: string
+  driverName: string;
   /**
    * 目的市
    */
-  endAddress: string
+  endAddress: string;
   /**
    * 目的机构id
    */
-  endAgencyId: string
+  endAgencyId: string;
   /**
    * 目的机构详细地址
    */
-  endCity: string
+  endCity: string;
   /**
    * 目的省份
    */
-  endProvince: string
-  exceptionList: ExceptionList[]
+  endProvince: string;
+  exceptionList: ExceptionList[];
   /**
    * 交付对接人
    */
-  finishHandoverName: string
+  finishHandoverName: string;
   /**
    * 交付对接人电话
    */
-  finishHandoverPhone: string
+  finishHandoverPhone: string;
   /**
    * 司机作业单id
    */
-  id: string
+  id: string;
   /**
    * 车牌号码
    */
-  licensePlate: string
+  licensePlate: string;
   /**
    * 计划到达时间
    */
-  planArrivalTime: string
+  planArrivalTime: string;
   /**
    * 计划发车时间
    */
-  planDepartureTime: string
+  planDepartureTime: string;
   /**
    * 起始机构详细地址
    */
-  startAddress: string
+  startAddress: string;
   /**
    * 起始机构id
    */
-  startAgencyId: string
+  startAgencyId: string;
   /**
    * 起始市
    */
-  startCity: string
+  startCity: string;
   /**
    * 提货对接人
    */
-  startHandoverName: string
+  startHandoverName: string;
   /**
    * 提货对接人电话
    */
-  startHandoverPhone: string
+  startHandoverPhone: string;
   /**
    * 起始省份
    */
-  startProvince: string
+  startProvince: string;
   /**
    * 作业状态，1为待提货）、2为在途）、3为改派）、4为已交付）、5为已作废、6为已完成（已回车登记）
    */
-  status: number
+  status: number;
   /**
    * 运输任务id
    */
-  transportTaskId: string
-}
+  transportTaskId: string;
+};
 
-type CargoPickUpPictureList = {
+export type CargoPickUpPictureList = {
   /**
    * 图片url地址
    */
-  url: string
-}
+  url: string;
+};
 
-type CargoPictureList = {
+export type CargoPictureList = {
   /**
    * 图片url地址
    */
-  url: string
-}
+  url: string;
+};
 
 type CertificatePictureList = {
   /**
    * 图片url地址
    */
-  url: string
-}
+  url: string;
+};
 
 type DeliverPictureList = {
   /**
    * 图片url地址
    */
-  url: string
-}
+  url: string;
+};
 
 type ExceptionList = {
   /**
    * 异常描述
    */
-  exceptionDescribe: string
+  exceptionDescribe: string;
   /**
    * 异常图片
    */
-  exceptionImagesList: ExceptionImagesList[]
+  exceptionImagesList: ExceptionImagesList[];
   /**
    * 上报的位置
    */
-  exceptionPlace: string
+  exceptionPlace: string;
   /**
    * 异常时间
    */
-  exceptionTime: string
+  exceptionTime: string;
   /**
    * 异常类型(中文)
    */
-  exceptionType: string
+  exceptionType: string;
   /**
    * 处理结果
    */
-  handleResult: string
-}
+  handleResult: string;
+};
 
 type ExceptionImagesList = {
   /**
    * 图片url
    */
-  url: string
-}
+  url: string;
+};
+
+export type takeDeliveryParams = {
+  /**
+   * 提货凭证照片数组
+   */
+  cargoPickUpPictureList: CargoPickUpPictureList[];
+  /**
+   * 提货照片数组
+   */
+  cargoPictureList: CargoPictureList[];
+  /**
+   * 司机作业id
+   */
+  id: string;
+};
+
+export type deliverParamsType = {
+  /**
+   * 交付凭证列表
+   */
+  certificatePictureList: CargoPickUpPictureList[];
+  /**
+   * 交付图片列表
+   */
+  deliverPictureList: CargoPictureList[];
+  /**
+   * 司机作业id
+   */
+  id: string;
+};

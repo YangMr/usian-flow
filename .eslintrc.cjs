@@ -31,7 +31,7 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
-        semi: false,
+        semi: true,
         printWidth: 100,
         trailingComma: 'all',
         endOfLine: 'auto',
